@@ -1,0 +1,21 @@
+@import '../../../common/scss/vars.scss';
+
+$cardSize: (
+  tiny: 54px,
+  small: 190px,
+  medium: 244px,
+  large: 254px,
+);
+
+.card {
+  border: 1px solid $mercury;
+  border-radius: 4px;
+  padding: 3px;
+  display: flex;
+
+  @each $size, $sizeVar in $cardSize {
+    &--#{$size} {
+      width: $sizeVar;
+    }
+  }
+}

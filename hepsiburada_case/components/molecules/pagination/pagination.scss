@@ -1,0 +1,43 @@
+@import '../../../common/scss/vars.scss';
+@import '../../../common/scss/mixins.scss';
+
+.pagination {
+
+    display: flex;
+
+    &__item {
+        width: 33px;
+        height: 33px;
+        background: $white;
+        border: 1px solid $gallery;
+        border-radius: 9px;
+        font-size: 10px;
+        color: $dove-gray;
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+
+        &:not(:last-child) {
+            margin-right: 7px;
+        }
+
+        &:hover {
+            @include background-opacity($dove-gray, 0.11);
+        }
+
+        &--selected {
+            color: $blaze-orange;
+            border: 1px solid $blaze-orange;
+
+            &:hover {
+                @include background-opacity($blaze-orange, 0.11);
+            }
+        }
+
+        &--disabled {
+            pointer-events: none;
+            @include background-opacity($gallery, 0.11);
+        }
+    }
+}

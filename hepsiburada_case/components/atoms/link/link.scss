@@ -1,0 +1,18 @@
+@import '../../../common/scss/vars.scss';
+
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: $gray;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+
+  &:hover {
+      color: $blaze-orange;
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+}

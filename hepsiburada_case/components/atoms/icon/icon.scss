@@ -1,0 +1,23 @@
+$iconSize: (
+  small: 12px,
+  medium: 18px,
+  large: 24px,
+);
+
+.icon {
+  display: inline-block;
+  color: red;
+
+  svg {
+    display: block;
+    width: inherit;
+    height: inherit;
+  }
+
+  @each $size, $sizeVar in $iconSize {
+    &--#{$size} {
+      width: $sizeVar;
+      height: $sizeVar;
+    }
+  }
+}

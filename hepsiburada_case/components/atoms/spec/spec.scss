@@ -1,0 +1,13 @@
+@import '../../../common/scss/vars.scss';
+
+.spec {
+  display: flex;
+  font-size: 12px;
+
+  &__key {
+    color: $tundora;
+    font-weight: $font-weight-bold;
+    margin-right: 5px;
+  }
+
+}
