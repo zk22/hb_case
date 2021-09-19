@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70" height="70" viewBox="0 0 70 70">
-    <defs>
-        <path id="close" d="M38.279 35.056L56.056 17.28l-3.222-3.223-17.778 17.778L17.28 14.056l-3.223 3.223 17.778 17.777-17.778 17.778 3.223 3.222L35.056 38.28l17.778 17.777 3.222-3.222z"/>
-    </defs>
-    <g fill="none" fill-rule="evenodd">
-        <path d="M0 0h70v70H0z"/>
-        <use fill="currentColor" xlink:href="#close"/>
-    </g>
-</svg>
