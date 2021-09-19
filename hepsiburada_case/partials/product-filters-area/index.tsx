@@ -23,10 +23,10 @@ export const ProductFilters = ({
 
   useEffect(() => {
     const load = async (): Promise<void> => {
-      const colorsResp = await getProductFilterValuesByType(FILTERS.color);
+      const colorsResp: any = await getProductFilterValuesByType(FILTERS.color);
       setColors(colorsResp.map(toFilterItemLabel));
 
-      const brandsResp = await getProductFilterValuesByType(FILTERS.brand);
+      const brandsResp: any = await getProductFilterValuesByType(FILTERS.brand);
       setBrands(brandsResp.map(toFilterItemLabel));
     };
     load();

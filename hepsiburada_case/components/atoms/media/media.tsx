@@ -6,6 +6,8 @@ interface MediaProps {
   tag?: string;
 }
 
+type MediaTag = 'img';
+
 export const Media = ({
   className = '',
   tag,
@@ -19,7 +21,7 @@ export const Media = ({
     className
   );
 
-  const Tag = `${tag || 'div'}`;
+  const Tag = `${tag || 'div'}` as MediaTag;
 
   return <Tag className={classes} {...props} />;
 };

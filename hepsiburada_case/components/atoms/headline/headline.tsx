@@ -17,6 +17,8 @@ interface HeadlineProps {
   level?: number;
 }
 
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
 export const Headline = ({
   className = '',
   level = 1,
@@ -31,7 +33,7 @@ export const Headline = ({
     className
   );
 
-  const Tag = `h${level}`;
+  const Tag = `h${level}` as HeadingTag;
 
   return (
     <Tag className={classes} {...props}>

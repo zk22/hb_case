@@ -25,11 +25,14 @@ export const UserCart = ({
   ]);
 
   useEffect(() => {
+    const load = async (): Promise<void> => {
+      const productIds = cart.map((item: ProductModel) => item.id);
+      const response = await getProductDetails(productIds);
+      dispatch(setProductInfo(response));
+    };
+
     if (cart.length) {
-      const productIds = cart.map((item) => item.id);
-      getProductDetails(productIds).then((resp: ProductModel[]) => {
-        dispatch(setProductInfo(resp));
-      });
+      load();
     } else {
       setExpanded(false);
     }

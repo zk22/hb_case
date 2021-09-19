@@ -5,8 +5,8 @@ export const toProductFilterParams = ({
   brand,
   from,
   to,
-}) => {
-  const filters = [];
+}: any) => {
+  const filters: any[] = [];
   if (searchText) {
     filters.push({
       key: 'name',
@@ -36,6 +36,6 @@ export const toProductFilterParams = ({
   };
 };
 
-export const toFilterItemLabel = ({ key, count }) => {
+export const toFilterItemLabel = ({ key, count }: any) => {
   return { key, label: `${key} (${count})` };
 };

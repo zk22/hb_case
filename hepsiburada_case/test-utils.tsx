@@ -16,7 +16,7 @@ export const makeTestStore = () => {
 };
 
 function render(
-  ui,
+  ui: any,
   {
     preloadedState,
     store = configureStore({
@@ -24,7 +24,7 @@ function render(
       preloadedState,
     }),
     ...renderOptions
-  } = {}
+  } = {} as any
 ) {
   function Wrapper({ children }) {
     return <Provider store={store}>{children}</Provider>;

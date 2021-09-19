@@ -30,7 +30,7 @@ export const ProductListArea = ({
 
   useEffect(() => {
     const load = async (): Promise<void> => {
-      const { count, products } = await getProducts(
+      const response: any = await getProducts(
         toProductFilterParams({
           searchText,
           orderBy,
@@ -41,8 +41,8 @@ export const ProductListArea = ({
         })
       );
 
-      setProductCount(count);
-      setProducts(products);
+      setProductCount(response.count);
+      setProducts(response.products);
     };
     load();
   }, [filters, searchText, orderBy, currentPage]);
