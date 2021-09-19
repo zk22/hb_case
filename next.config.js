@@ -3,6 +3,10 @@ const path = require('path'); // eslint-disable-line
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
+  images: {
+    loader: 'imgix',
+    path: '/',
+  },
   webpack(config) {
     config.resolve.alias['@'] = __dirname;
 

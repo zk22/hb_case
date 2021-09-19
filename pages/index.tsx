@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <Header />
-      <div className="container">
+      <div className="container p-b-50">
         <ProductBreadcrumbArea />
         <div className="product-area">
           <ProductFilters />
