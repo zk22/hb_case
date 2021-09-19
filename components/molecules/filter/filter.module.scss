@@ -1,0 +1,18 @@
+.filter {
+  &Label {
+    padding-bottom: 20px;
+  }
+
+  &Item {
+    margin: 5px 0;
+  }
+
+  &Items {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & + & {
+    margin-top: 20px;
+  }
+}

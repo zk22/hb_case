@@ -1,0 +1,19 @@
+@import '@/common/styles/vars.scss';
+
+.filter-item {
+  text-decoration: none;
+  cursor: pointer;
+  color: $gray;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+
+  &:hover,
+  &--selected {
+    color: $blaze-orange;
+  }
+
+  &--disabled {
+    pointer-events: none;
+  }
+}

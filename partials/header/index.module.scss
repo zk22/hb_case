@@ -1,0 +1,17 @@
+@import '@/common/styles/vars.scss';
+
+.header {
+  height: $header-height;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  }
+
+  &__search {
+    flex-grow: 1;
+    margin: 0 100px;
+  }
+}

@@ -1,0 +1,9 @@
+.user-cart {
+  position: relative;
+
+  &__badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+  }
+}

@@ -1,0 +1,12 @@
+@import '@/common/styles/vars.scss';
+
+.product-list-area {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__product {
+    margin: 10px;
+  }
+}

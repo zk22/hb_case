@@ -1,0 +1,26 @@
+@import '@/common/styles/vars.scss';
+
+$labelSize: (
+  tiny: 12px,
+  small: 14px,
+  medium: 15px,
+  large: 17px,
+);
+
+.label {
+  color: $silver-chalice;
+
+  @each $size, $sizeVar in $labelSize {
+    &--#{$size} {
+      font-size: $sizeVar;
+    }
+  }
+
+  &--bold {
+    font-weight: $font-weight-bold;
+  }
+
+  &--dark {
+    color: $tundora;
+  }
+}
