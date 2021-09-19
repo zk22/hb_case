@@ -1,31 +1,25 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import './media.scss';
-
 interface MediaProps {
-    className?: string;
-    tag?: string;
+  className?: string;
+  tag?: string;
 }
 
 export const Media = ({
-    className = '',
-    tag,
-    children,
-    ...props
-}: MediaProps & React.AnchorHTMLAttributes<HTMLElement>) => {
-    const classes = classnames({
-        media: true,
-    }, className);
+  className = '',
+  tag,
+  children,
+  ...props
+}: MediaProps & React.ImgHTMLAttributes<HTMLImageElement>): ReactElement => {
+  const classes = classnames(
+    {
+      media: true,
+    },
+    className
+  );
 
-    const Tag = `${tag}`
+  const Tag = `${tag || 'div'}`;
 
-    return (
-        <Tag
-            className={classes}
-            {...props}
-        >
-            {children}
-        </Tag>
-    );
+  return <Tag className={classes} {...props} />;
 };

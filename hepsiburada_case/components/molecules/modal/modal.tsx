@@ -1,38 +1,46 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { createPortal } from 'react-dom';
 import classnames from 'classnames';
 
-import './modal.scss';
+import styles from './modal.module.scss';
 
 interface ModalProps {
-    className?: string;
-    children: JSX.Element;
-    header?: JSX.Element | string;
-    footer?: JSX.Element | string;
-    open?: boolean;
+  className?: string;
+  children: JSX.Element;
+  header?: JSX.Element | string;
+  footer?: JSX.Element | string;
+  open?: boolean;
 }
 
+function Modal({
+  open,
+  className,
+  header,
+  footer,
+  children,
+}: ModalProps): ReactElement | null {
+  if (!open) {
+    return null;
+  }
 
-function Modal({ open, className, header, footer, children }: ModalProps) {
-    if (!open) {
-        return null;
-    }
+  const classes = classnames(
+    {
+      [styles.modal]: true,
+    },
+    className
+  );
 
-    const classes = classnames({
-        modal: true,
-    }, className)
+  const modalContent = (
+    <div className={styles.modal__backdrop}>
+      <div className={classes}>
+        {header && <div className={styles.modal__header}>{header}</div>}
+        <div className={styles.modal__content}>{children}</div>
+        {footer && <div className={styles.modal__footer}>{footer}</div>}
+      </div>
+    </div>
+  );
 
-    const modalContent = (
-        <div className={`modal__backdrop`}>
-            <div className={classes}>
-                {header && <div className="modal__header">{header}</div>}
-                <div className={`modal__content`}>{children}</div>
-                {footer && <div className="modal__footer">{footer}</div>}
-            </div>
-        </div>
-    );
-
-    return createPortal(modalContent, document.body);
+  return createPortal(modalContent, document.body);
 }
 
 export default React.memo(Modal);

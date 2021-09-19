@@ -1,41 +1,41 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import './headline.scss';
+import styles from './headline.module.scss';
 
 const LEVELS: string[] = [
-    'primary',
-    'secondary',
-    'tertiary',
-    'quaternary',
-    'quinary',
-    'senary',
+  'primary',
+  'secondary',
+  'tertiary',
+  'quaternary',
+  'quinary',
+  'senary',
 ];
 
 interface HeadlineProps {
-    className?: string;
-    level?: number;
+  className?: string;
+  level?: number;
 }
 
 export const Headline = ({
-    className = '',
-    level = 1,
-    children,
-    ...props
-}: HeadlineProps & React.HTMLAttributes<HTMLHeadingElement>) => {
-    const classes = classnames({
-        headline: true,
-        [`headline--${LEVELS[level - 1]}`]: true,
-    }, className);
+  className = '',
+  level = 1,
+  children,
+  ...props
+}: HeadlineProps & React.HTMLAttributes<HTMLHeadingElement>): ReactElement => {
+  const classes = classnames(
+    {
+      [styles.headline]: true,
+      [styles[`headline--${LEVELS[level - 1]}`]]: true,
+    },
+    className
+  );
 
-    const Tag = `h${level}`;
+  const Tag = `h${level}`;
 
-    return (
-        <Tag
-            className={classes}
-            {...props}
-        >
-            {children}
-        </Tag>
-    );
+  return (
+    <Tag className={classes} {...props}>
+      {children}
+    </Tag>
+  );
 };

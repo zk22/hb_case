@@ -1,0 +1,54 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  -webkit-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  @media (prefers-reduced-motion: reduce) {
+    & {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+  &,
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  font-size: var(--font-size);
+  font-family: $font-family-default;
+  line-height: $line-height-default;
+  background: $white;
+  font-display: swap;
+}
+
+.container {
+  width: 1280px;
+  margin: auto;
+}
+
+.product-area {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.m-h-5 {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.m-v-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

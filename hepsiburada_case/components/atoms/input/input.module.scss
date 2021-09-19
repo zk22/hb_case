@@ -1,0 +1,50 @@
+@import '@/common/styles/vars.scss';
+@import '@/common/styles/mixins.scss';
+
+.input__container {
+  position: relative;
+}
+
+.input {
+  border: 0;
+  display: inline-block;
+  outline: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: $gallery;
+  color: $mine-shaft;
+  border-radius: 4px;
+  padding: 15px 30px 15px 55px;
+  font-size: 15px;
+
+  $this: &;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 27px;
+    margin: auto;
+    color: $mine-shaft;
+  }
+
+  &::placeholder {
+    color: $silver-chalice;
+  }
+
+  &--round {
+    border-radius: 100px;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--disabled {
+    cursor: auto;
+    pointer-events: none;
+    user-select: none;
+    @include background-opacity($gallery, 0.15);
+  }
+}

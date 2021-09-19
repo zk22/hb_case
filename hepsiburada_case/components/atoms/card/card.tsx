@@ -1,32 +1,32 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import './card.scss';
+import styles from './card.module.scss';
 
 type CardSize = 'tiny' | 'small' | 'medium' | 'large';
 
 interface CardProps {
-    className?: string;
-    size?: CardSize;
+  className?: string;
+  size?: CardSize;
 }
 
 export const Card = ({
-    className = '',
-    size = 'medium',
-    children,
-    ...props
-}: CardProps & React.AnchorHTMLAttributes<HTMLElement>) => {
-    const classes = classnames({
-        card: true,
-        [`card--${size}`]: true,
-    }, className);
+  className = '',
+  size = 'medium',
+  children,
+  ...props
+}: CardProps & React.HTMLAttributes<HTMLElement>): ReactElement => {
+  const classes = classnames(
+    {
+      [styles.card]: true,
+      [styles[`card--${size}`]]: true,
+    },
+    className
+  );
 
-    return (
-        <div
-            className={classes}
-            {...props}
-        >
-            {children}
-        </div>
-    );
+  return (
+    <div className={classes} {...props}>
+      {children}
+    </div>
+  );
 };

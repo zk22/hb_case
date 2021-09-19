@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 
-import './badge.scss';
+import styles from './badge.module.scss';
 
 interface BadgeProps {
-    className?: string;
+  className?: string;
 }
 
 export const Badge = ({
-    className = '',
-    children,
-    ...props
-}: BadgeProps & React.HTMLAttributes<HTMLSpanElement>) => {
-    const classes = classnames({
-        badge: true,
-    }, className);
+  className = '',
+  children,
+  ...props
+}: BadgeProps & React.HTMLAttributes<HTMLSpanElement>): ReactElement => {
+  const classes = classnames(
+    {
+      [styles.badge]: true,
+    },
+    className
+  );
 
-    return (
-        <span
-            className={classes}
-            {...props}
-        >{children}</span>
-    );
+  return (
+    <span className={classes} {...props}>
+      {children}
+    </span>
+  );
 };
