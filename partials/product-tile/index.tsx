@@ -20,7 +20,9 @@ export const ProductTile = ({
   return (
     <div className={styles['product-tile']}>
       <Card size="tiny">
-        <Media tag="img" src={images[0]}></Media>
+        <div>
+          <Media tag="img" src={images[0]} width="100%"></Media>
+        </div>
       </Card>
       <div className={styles['product-tile__details']}>
         <Label variant="dark" size="tiny">

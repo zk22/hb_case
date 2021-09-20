@@ -26,7 +26,9 @@ export const ProductCard = ({
         onMouseEnter={() => setFocused(true)}
         onMouseLeave={() => setFocused(false)}
       >
-        <Media tag="img" src={images[0]} />
+        <div>
+          <Media tag="img" src={images[0]} width="100%" />
+        </div>
         <CardContent>
           <Label variant="dark" size="tiny">
             {name}
